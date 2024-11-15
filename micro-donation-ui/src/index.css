@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global Styling */
+body {
+    @apply bg-gray-50 text-gray-800;
+    font-family: 'Inter', sans-serif; /* Default font */
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif; /* Headlines */
+}
+
 /* Custom Styling */
 body {
     @apply bg-gray-50 text-gray-800 font-sans;
@@ -46,4 +56,30 @@ footer {
 /* Donation Pool Grid */
 .pool-grid {
     @apply grid grid-cols-1 md:grid-cols-3 gap-6 mt-6;
+}
+
+
+
+/* Tailwind CSS + Custom Hue Animation */
+@keyframes hue-transition {
+    0% {
+        background-color: #667eea; /* Starting color */
+    }
+    50% {
+        background-color: #764ba2; /* Midway color */
+    }
+    100% {
+        background-color: #f58f29; /* Ending color */
+    }
+}
+
+/* Applying hue transition to the navbar */
+nav {
+    animation: hue-transition 10s infinite ease-in-out;
+}
+
+/* Hover effect for links and button */
+nav a:hover,
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
