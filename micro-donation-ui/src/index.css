@@ -1,0 +1,49 @@
+/* Import Tailwind base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styling */
+body {
+    @apply bg-gray-50 text-gray-800 font-sans;
+    font-family: 'Inter', sans-serif; /* Modern, clean font */
+}
+
+/* Navbar Styling */
+nav {
+    @apply bg-blue-600 text-white shadow-lg fixed top-0 w-full z-50 px-4 py-2;
+}
+
+/* Card Styling */
+.card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden p-4 transition-all duration-300 hover:shadow-xl;
+}
+
+/* Button Styling */
+button {
+    @apply bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md transition-all duration-300;
+}
+button:hover {
+    @apply bg-blue-700 shadow-lg;
+}
+
+/* Form Inputs */
+input,
+textarea {
+    @apply border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+/* Page Titles */
+h1, h2 {
+    @apply text-gray-900 font-bold mb-4;
+}
+
+/* Footer */
+footer {
+    @apply bg-gray-800 text-white py-4 text-center mt-8;
+}
+
+/* Donation Pool Grid */
+.pool-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-6 mt-6;
+}
