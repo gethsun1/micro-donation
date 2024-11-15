@@ -8,8 +8,8 @@ const Navbar = ({ connectWallet, walletAddress }) => {
     };
 
     return (
-        <nav className="bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-600 text-white shadow-lg fixed top-0 w-full z-50">
-            <div className="container mx-auto flex items-center justify-between py-3 px-6">
+        <nav className="bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-600 text-white shadow-lg fixed top-0 w-full z-50 px-4 py-3">
+            <div className="container mx-auto flex items-center justify-between py-3">
                 {/* Logo and Slogan */}
                 <div className="flex items-center space-x-4">
                     <img 

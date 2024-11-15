@@ -13,15 +13,12 @@ h1, h2, h3 {
     font-family: 'Poppins', sans-serif; /* Headlines */
 }
 
-/* Custom Styling */
-body {
-    @apply bg-gray-50 text-gray-800 font-sans;
-    font-family: 'Inter', sans-serif; /* Modern, clean font */
-}
-
 /* Navbar Styling */
 nav {
-    @apply bg-blue-600 text-white shadow-lg fixed top-0 w-full z-50 px-4 py-2;
+    @apply bg-blue-600 text-white shadow-lg fixed top-0 w-full z-50 px-4 py-3; /* Adjusted padding */
+    display: flex;
+    justify-content: space-between; /* Ensure items are aligned */
+    align-items: center; /* Vertically center items */
 }
 
 /* Card Styling */
@@ -57,8 +54,6 @@ footer {
 .pool-grid {
     @apply grid grid-cols-1 md:grid-cols-3 gap-6 mt-6;
 }
-
-
 
 /* Tailwind CSS + Custom Hue Animation */
 @keyframes hue-transition {
