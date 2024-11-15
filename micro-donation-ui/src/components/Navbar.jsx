@@ -19,7 +19,7 @@ const Navbar = ({ connectWallet, walletAddress }) => {
                     />
                     <div className="hidden sm:block">
                         <h1 className="text-xl font-bold font-poppins tracking-wide">
-                            Donatr
+                            DonaTr
                         </h1>
                         <p className="text-xs italic font-inter">
                             Small Contributions, Big Impact
