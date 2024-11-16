@@ -1,29 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { ethers } from "ethers";
 import PoolCard from "../components/PoolCard";
 
+import contractABI from "../contracts/PoolFactory.json";
+import contractAddress from "../contracts/contractAddress";
+
 const Home = () => {
-    const donationPools = [
-        { title: "Education for All", description: "Support underprivileged children.", totalDonations: "$500" },
-        { title: "Clean Water", description: "Help provide clean water.", totalDonations: "$300" },
-        { title: "Healthcare Fund", description: "Support community health programs.", totalDonations: "$800" },
-    ];
+  const [pools, setPools] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    return (
-        <div className="container mx-auto mt-12 text-center">
-            {/* Title and Slogan */}
-            <h2 className="text-3xl font-semibold text-gray-800">Empowering Change, One Donation at a Time</h2>
-            <p className="text-lg text-gray-600 mt-4">
-                Join us in making a difference. Support meaningful causes with ease.
-            </p>
-
-            {/* Donation Pools */}
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {donationPools.map((pool, index) => (
-                    <PoolCard key={index} {...pool} />
-                ))}
-            </div>
-        </div>
+  const fetchPools = async () => {
+    setLoading(true);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const contract = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      provider
     );
+
+    const poolCount = await contract.poolCount();
+    const poolData = [];
+    for (let i = 0; i < poolCount; i++) {
+      const pool = await contract.pools(i);
+      poolData.push({ ...pool, id: i });
+    }
+    setPools(poolData);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchPools();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+
+  return (
+    <div>
+      <h1>Active Pools</h1>
+      {pools.map((pool) => (
+        <PoolCard key={pool.id} pool={pool} />
+      ))}
+    </div>
+  );
 };
 
 export default Home;

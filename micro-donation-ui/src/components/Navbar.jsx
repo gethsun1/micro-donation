@@ -33,14 +33,17 @@ const Navbar = ({ connectWallet, walletAddress }) => {
                 {/* Desktop Navigation Links */}
                 <div className="hidden sm:flex flex-wrap items-center space-x-6">
                 
-                    <button
-                        onClick={connectWallet}
-                        className="bg-white text-blue-600 font-inter font-medium px-4 py-2 rounded-lg shadow-md hover:bg-blue-100 transition-all duration-300"
-                    >
-                        {walletAddress
-                            ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}`
-                            : "Connect Wallet"}
-                    </button>
+                   
+                  <button
+    onClick={connectWallet}
+    className="bg-white text-blue-600 font-inter text-sm font-medium tracking-wide px-4 py-2 rounded-lg shadow-md hover:bg-blue-100 transition-all duration-300"
+>
+    {walletAddress
+        ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}`
+        : "Connect Wallet"}
+</button>
+
+
                 </div>
 
               

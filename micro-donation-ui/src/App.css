@@ -44,6 +44,7 @@ nav h1 {
   width: 300px;
   text-align: center;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  @apply bg-white max-w-sm mx-auto rounded-lg shadow-md overflow-hidden p-4 transition-all duration-300 hover:shadow-xl;
 }
 
 .card:hover {
@@ -133,4 +134,14 @@ footer p {
     width: 100%;
     font-size: 18px;
   }
+}
+
+
+.pool-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6 px-4;
+}
+
+
+.section {
+    @apply py-6 space-y-8;
 }
