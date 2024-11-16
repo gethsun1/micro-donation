@@ -9,16 +9,44 @@ body {
     font-family: 'Inter', sans-serif; /* Default font */
 }
 
-h1, h2, h3 {
+h2, h3 {
     font-family: 'Poppins', sans-serif; /* Headlines */
 }
 
 /* Navbar Styling */
 nav {
-    @apply bg-blue-600 text-white shadow-lg fixed top-0 w-full z-50 px-4 py-3; /* Adjusted padding */
+    animation: hue-transition 10s infinite ease-in-out;
+    background-color: transparent;
+    max-height: 150px; /* Restrict height */
+    overflow: hidden; /* Prevent overflow */
+    font-family: 'Inter', sans-serif; /* Default navbar font */
+}
+
+/* Navbar container with wrapping */
+nav .container {
     display: flex;
-    justify-content: space-between; /* Ensure items are aligned */
-    align-items: center; /* Vertically center items */
+    flex-wrap: wrap; /* Allow wrapping of items */
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem; /* Spacing for wrapped items */
+}
+
+/* Navbar headline and branding */
+nav h1, nav h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Mobile menu styling */
+nav .sm-hidden {
+    padding: 1rem;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effect for links and button */
+nav a:hover,
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Card Styling */
@@ -66,15 +94,4 @@ footer {
     100% {
         background-color: #f58f29; /* Ending color */
     }
-}
-
-/* Applying hue transition to the navbar */
-nav {
-    animation: hue-transition 10s infinite ease-in-out;
-}
-
-/* Hover effect for links and button */
-nav a:hover,
-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
 }
